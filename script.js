@@ -202,13 +202,13 @@ if(!isOpen){
 
 })
 
-
-function checkRestaurantOpen(){
+function checkRestaurantOpen() {
     const data = new Date();
     const hora = data.getHours();
-    return hora >= 11 && hora < 23; 
-
+    // Loja aberta das 18h até 3h da manhã
+    return (hora >= 18 && hora < 24) || (hora >= 0 && hora < 3);
 }
+
 
 const spanItem = document.getElementById("date-span")
 const isOpen = checkRestaurantOpen();
